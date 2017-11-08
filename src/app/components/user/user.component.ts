@@ -12,6 +12,7 @@ export class UserComponent implements OnInit {
   email: string;
   address: Address;
   lorem: Lorem;
+  hobbies: string[];
 
 
   constructor() { }
@@ -19,23 +20,32 @@ export class UserComponent implements OnInit {
   ngOnInit() {
     console.log('ngOnInit ran...');
 
+    let texth1 = document.querySelector('h1');
+    texth1.style.fontSize = "20px";
+
     let pasdidee = document.querySelector('.paragraph');
-    window.setInterval(function(){
+    window.setInterval(function () {
       pasdidee.classList.toggle('red');
     }, 1000);
 
 
     this.name = 'Benjamin';
     this.age = 29;
+    this.email = 'bchampetier@amiltone.fr';
     this.address = {
       street: '176 rue Fructidor',
       city: 'Montpellier',
       state: 'Languedoc'
     };
     this.lorem = {
-      questceque:`Qu'est-ce que le Lorem Ipsum?
-      Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.`
-    }
+      questceque: `Qu'est-ce que le Lorem Ipsum?
+      Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.`
+    };
+    this.hobbies = ["football", "jeux-video", "pêche", "cinéma", "bowling"];
+  }
+
+  onClick() {
+    this.hobbies.push('New hobby');
   }
 
 }

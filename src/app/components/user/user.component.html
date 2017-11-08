@@ -7,3 +7,9 @@
 <h3>{{age}}</h3>
 
 <p class="paragraph">{{lorem.questceque}}</p>
+
+<ul>
+    <li *ngFor="let hobby of hobbies; let i = index">{{i +1}}: {{hobby}}</li>
+</ul>
+
+<button (click)="onClick()">Click Me</button>
