@@ -44,8 +44,17 @@ export class UserComponent implements OnInit {
     this.hobbies = ["football", "jeux-video", "pêche", "cinéma", "bowling"];
   }
 
-  onClick() {
-    this.hobbies.push('New hobby');
+  removeHobby(hobby) {
+    for (let i = 0; i < this.hobbies.length; i++) {
+      if (this.hobbies[i] == hobby) {
+        this.hobbies.splice(i, 1);
+      }
+    }
+  }
+
+  addHobby(hobby) {
+    this.hobbies.unshift(hobby); //push to the beginning of the arrayS
+    return false;
   }
 
 }
