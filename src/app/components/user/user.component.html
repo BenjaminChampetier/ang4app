@@ -6,26 +6,33 @@
 <h3>{{address.state}}</h3>
 <h3>{{age}}</h3>
 
+<button (click)="toggleEdit()">Edit User</button>
+
 <h1>Edit User</h1>
 <form>
     <div>
-        <label for="name">name:</label><br>
+        <label for="name">name:</label>
+        <br>
         <input type="text" [(ngModel)]="name" name="name">
     </div>
     <div>
-        <label for="street">street:</label><br>
+        <label for="street">street:</label>
+        <br>
         <input type="text" [(ngModel)]="address.street" name="street">
     </div>
     <div>
-        <label for="city">city:</label><br>
+        <label for="city">city:</label>
+        <br>
         <input type="text" [(ngModel)]="address.city" name="city">
     </div>
     <div>
-        <label for="state">state:</label><br>
+        <label for="state">state:</label>
+        <br>
         <input type="text" [(ngModel)]="address.state" name="state">
     </div>
     <div>
-        <label for="age">age:</label><br>
+        <label for="age">age:</label>
+        <br>
         <input type="number" [(ngModel)]="age" name="age">
     </div>
 </form>
@@ -45,3 +52,9 @@
         <button (click)="removeHobby(hobby)">x</button>
     </li>
 </ul>
+
+<h1>Posts</h1>
+<div *ngFor="let post of posts">
+    <h4>{{post.title}}</h4>
+    <p>{{post.body}}</p>
+</div>

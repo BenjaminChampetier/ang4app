@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-user',
@@ -13,9 +14,10 @@ export class UserComponent implements OnInit {
   address: Address;
   lorem: Lorem;
   hobbies: string[];
+  posts: Post[];
 
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
     console.log('ngOnInit ran...');
@@ -42,6 +44,10 @@ export class UserComponent implements OnInit {
       Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.`
     };
     this.hobbies = ["football", "jeux-video", "pêche", "cinéma", "bowling"];
+
+    this.dataService.getPosts().subscribe((posts) => {
+      this.posts = posts;
+    });
   }
 
   removeHobby(hobby) {
@@ -67,4 +73,11 @@ interface Address {
 
 interface Lorem {
   questceque: string;
+}
+
+interface Post {
+  id: number;
+  title: string;
+  body: string;
+  userId: number
 }
