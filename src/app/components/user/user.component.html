@@ -8,34 +8,36 @@
 
 <button (click)="toggleEdit()">Edit User</button>
 
-<h1>Edit User</h1>
-<form>
-    <div>
-        <label for="name">name:</label>
-        <br>
-        <input type="text" [(ngModel)]="name" name="name">
-    </div>
-    <div>
-        <label for="street">street:</label>
-        <br>
-        <input type="text" [(ngModel)]="address.street" name="street">
-    </div>
-    <div>
-        <label for="city">city:</label>
-        <br>
-        <input type="text" [(ngModel)]="address.city" name="city">
-    </div>
-    <div>
-        <label for="state">state:</label>
-        <br>
-        <input type="text" [(ngModel)]="address.state" name="state">
-    </div>
-    <div>
-        <label for="age">age:</label>
-        <br>
-        <input type="number" [(ngModel)]="age" name="age">
-    </div>
-</form>
+<div *ngIf=isEdit>
+    <h1>Edit User</h1>
+    <form>
+        <div>
+            <label for="name">name:</label>
+            <br>
+            <input type="text" [(ngModel)]="name" name="name">
+        </div>
+        <div>
+            <label for="street">street:</label>
+            <br>
+            <input type="text" [(ngModel)]="address.street" name="street">
+        </div>
+        <div>
+            <label for="city">city:</label>
+            <br>
+            <input type="text" [(ngModel)]="address.city" name="city">
+        </div>
+        <div>
+            <label for="state">state:</label>
+            <br>
+            <input type="text" [(ngModel)]="address.state" name="state">
+        </div>
+        <div>
+            <label for="age">age:</label>
+            <br>
+            <input type="number" [(ngModel)]="age" name="age">
+        </div>
+    </form>
+</div>
 
 <p class="paragraph">{{lorem.questceque}}</p>
 

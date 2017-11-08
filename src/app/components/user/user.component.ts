@@ -15,6 +15,7 @@ export class UserComponent implements OnInit {
   lorem: Lorem;
   hobbies: string[];
   posts: Post[];
+  isEdit:boolean = false;
 
 
   constructor(private dataService: DataService) { }
@@ -59,8 +60,14 @@ export class UserComponent implements OnInit {
   }
 
   addHobby(hobby) {
-    this.hobbies.unshift(hobby); //push to the beginning of the arrayS
+    //push to the beginning of the array
+    this.hobbies.unshift(hobby); 
     return false;
+  }
+
+  toggleEdit() {
+    this.isEdit = this.isEdit;
+    console.log('Edit', this.isEdit);
   }
 
 }
